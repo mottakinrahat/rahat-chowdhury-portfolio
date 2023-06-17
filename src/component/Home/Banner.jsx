@@ -1,6 +1,7 @@
 import React from 'react';
 import backgroundImage from '../../assets/banner/background.jpg'
 import myImage from '../../assets/banner/editedBG-removebg-preview.png'
+import bannerImg from '../../assets/banner/bannerImg.png';
 const Banner = () => {
     return (
         <div className="relative">
@@ -8,7 +9,7 @@ const Banner = () => {
           className="bg-cover  h-[700px] "
           style={{ backgroundImage: `url(${backgroundImage})` }}
         >
-          <div className="absolute h-full inset-0 bg-black opacity-75"></div>
+          <div className="absolute h-full inset-0 bg-black opacity-100"></div>
           <div className="relative flex items-center justify-between container px-40 mx-auto  h-full">
             <div className="text-white text-lg w-1/2 sm:text-xl mt-20">
               <h1 className="font-semibold text-3xl">Hello, It's me </h1>
@@ -20,9 +21,9 @@ const Banner = () => {
             </div>
             <div>
               <img
-                src={myImage}
+                src={bannerImg}
                 alt="Your Image"
-                className="w-[400px] mt-10 rounded-full"
+                className="w-[550px] ml-20 mt-10 rounded-full"
               />
             </div>
           </div>
