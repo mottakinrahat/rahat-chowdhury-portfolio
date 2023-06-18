@@ -9,6 +9,8 @@ import {
 } from "react-router-dom";
 import Main from './layout/Main';
 import Home from './component/Home/Home';
+import MyProjects from './component/My Projects/MyProjects';
+import ProjectDetails from './component/ProjectDetails/ProjectDetails';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +20,15 @@ const router = createBrowserRouter([
       {
    path:'/',
    element:<Home></Home>
+      },
+      {
+        path:'projects',
+        element:<MyProjects></MyProjects>
+      },
+      {
+        path:'projects/:id',
+        element:<ProjectDetails></ProjectDetails>,
+        loader:({params})=>fetch(`http://localhost:5000/projects/${params.id}`)
       }
     ]
   },

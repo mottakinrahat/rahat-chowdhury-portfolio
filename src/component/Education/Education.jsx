@@ -5,7 +5,7 @@ import Lottie from "lottie-react";
 const Education = () => {
     return (
         <div>
-            <h2 className="text-3xl font-bold text-center mt-10">Educational Qualification</h2>
+            <h2 className="text-3xl font-bold text-center mt-40">Educational Qualification</h2>
             <div className='md:flex justify-between items-center gap-10 px-20'>
                 {/* image section */}
                 <div className='w-1/2'>

@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import ShowProjects from './ShowProjects';
 
 const MyProjects = () => {
+    const [projects,setProjects]=useState([])
+    useEffect(()=>{
+        fetch('http://localhost:5000/projects')
+        .then(res => res.json())
+        .then(data=>setProjects(data))
+    },[])
+    console.log(projects);
     return (
-        <div>
-             <h2 className="text-3xl font-bold text-center mt-20">My Projects</h2>
-            <div>
+        <div className='pt-20'>    
 
+             {
+                projects.map(project =><ShowProjects key={project._id} project={project}></ShowProjects>)
+             }
             </div>
-        </div>
+
     );
 };
 
