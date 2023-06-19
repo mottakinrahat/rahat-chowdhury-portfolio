@@ -5,7 +5,7 @@ const ShowSkill = ({ skill }) => {
   const { image, name, description } = skill;
   return (
     <div className="mt-20">
-      <div className="card w-[180px] h-[200px] bg-neutral bg-opacity-60 duration-300  hover:w-[190px] text-neutral-content hover:ease-out hover:bg-yellow-500 hover:text-black">
+      <div className="card w-[120px] h-[130px] bg-neutral bg-opacity-60 duration-300   hover:w-[130px] hover:h-[140px] text-neutral-content hover:ease-out hover:bg-yellow-500 hover:text-black">
         <div className="card-body items-center text-center">
           <img src={image} alt="" />
           <h2 className="card-title">{name}</h2>

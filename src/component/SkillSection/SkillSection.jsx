@@ -12,7 +12,7 @@ const SkillSection = () => {
     return (
         <div>
             <h2 className='text-3xl font-bold text-center mt-10'>My Skills</h2>
-         <div className='grid md:grid-cols-4 justify-around items-center px-10 ml-20'>
+         <div className='grid md:grid-cols-5 justify-around items-center px-10 ml-20'>
          {
             skills.map(skill=><ShowSkill key={skill._id} skill={skill}></ShowSkill>)
           }

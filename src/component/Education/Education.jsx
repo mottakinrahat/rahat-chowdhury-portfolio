@@ -16,30 +16,35 @@ const Education = () => {
                 <div className='w-1/2'>
                     <div className="collapse collapse-plus mb-2 bg-white text-black">
                         <input type="radio" name="my-accordion-3"  />
-                        <div className="collapse-title text-xl font-bold">
-                            Bachelor in Science
+                        <div className="collapse-title text-xl font-semibold">
+                           East West University
                         </div>
                         <div className="collapse-content">
-                            <h1 className='text-xl font-semibold'>East West University</h1>
+                            <h1 className='text-md font-semibold'>BSc in Computer science and Engineering</h1>
+                            <h1 className=' '>Session: 2020-running</h1>
                             
                         </div>
                     </div>
                     <div className="collapse collapse-plus mb-2 bg-white text-black">
                         <input type="radio" name="my-accordion-3" />
-                        <div className="collapse-title text-xl font-medium">
-                            HSC
+                        <div className="collapse-title text-xl font-semibold">
+                           Ibn Taimiya School and College
                         </div>
                         <div className="collapse-content">
-                            <p>hello</p>
+                        <p className='font-semibold'>HSC</p>
+                        <p>Group: Science</p>
+                            <p>Passing Year: 2019</p>
                         </div>
                     </div>
                     <div className="collapse collapse-plus mb-2 bg-white text-black">
                         <input type="radio" name="my-accordion-3" />
                         <div className="collapse-title text-xl font-medium">
-                           SSC
+                           Barura Haji Nowab Ali pilot high school
                         </div>
                         <div className="collapse-content">
-                            <p>hello</p>
+                            <p className='font-semibold'>SSC</p>
+                            <p>Group: Science</p>
+                            <p>Passing Year: 2017</p>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import myNewImage from '../../assets/banner/myLastBannerImg.png'
+import profile from '../../assets/lottie/profile.json'
+import Lottie from "lottie-react";
 
 const AboutMe = () => {
   const [showFullParagraph, setShowFullParagraph] = useState(false);
@@ -15,11 +17,10 @@ const AboutMe = () => {
 
   return (
     <div>
-      <h2 className="text-3xl font-bold text-center mt-10">About Me</h2>
       <div>
         <div className="hero min-h-screen bg-base-200 w-full">
           <div className="hero-content  flex-col  lg:flex-row gap-40">
-            <img src={myNewImage} className="max-w-sm rounded-lg shadow-2xl" />
+          <Lottie className='w-[600px]' animationData={profile} loop={true} />
             <div className="w-full">
               <h1 className="text-5xl font-bold">About Me</h1>
               <h1 className="text-2 font-bold">React Developer</h1>
