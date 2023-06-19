@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import myImage from '../../assets/banner/editedBG-removebg-preview.png'
+import myNewImage from '../../assets/banner/myLastBannerImg.png'
 
 const AboutMe = () => {
   const [showFullParagraph, setShowFullParagraph] = useState(false);
@@ -19,7 +19,7 @@ const AboutMe = () => {
       <div>
         <div className="hero min-h-screen bg-base-200 w-full">
           <div className="hero-content  flex-col  lg:flex-row gap-40">
-            <img src={myImage} className="max-w-sm rounded-lg shadow-2xl" />
+            <img src={myNewImage} className="max-w-sm rounded-lg shadow-2xl" />
             <div className="w-full">
               <h1 className="text-5xl font-bold">About Me</h1>
               <h1 className="text-2 font-bold">React Developer</h1>
