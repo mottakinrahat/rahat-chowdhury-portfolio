@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import education from '../../assets/lottie/education-lottie.json'
 import Lottie from "lottie-react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Education = () => {
+    useEffect(()=>{
+        AOS.init({duration:2000})
+      },[])
     return (
-        <div>
+        <div className="relative animation" data-aos="zoom-out">
             <h2 className="text-3xl font-bold text-center mt-40">Educational Qualification</h2>
             <div className='md:flex justify-between items-center gap-10 px-20'>
                 {/* image section */}

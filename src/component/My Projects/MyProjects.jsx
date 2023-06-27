@@ -1,20 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import ShowProjects from './ShowProjects';
-
+import ParticleBG from '../ParticleBG/ParticleBG';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const MyProjects = () => {
+    useEffect(()=>{
+        AOS.init({duration:2000})
+      },[])
     const [projects,setProjects]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/projects')
+        fetch('https://rahat-portfolio-server-phi.vercel.app/projects')
         .then(res => res.json())
         .then(data=>setProjects(data))
     },[])
     console.log(projects);
     return (
-        <div className='pt-20'>    
+        <div className="relative animation pt-20" data-aos="zoom-out-left"> 
+
 
              {
                 projects.map(project =><ShowProjects key={project._id} project={project}></ShowProjects>)
              }
+             <ParticleBG></ParticleBG>
             </div>
 
     );

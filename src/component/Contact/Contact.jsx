@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot ,faEnvelope,faPhone} from '@fortawesome/free-solid-svg-icons';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-
-const Contact = () => {
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+    const Contact = () => {
+    useEffect(()=>{
+      AOS.init({duration:2000})
+    },[])
     return (
-        <div>
+        <div className='animation' data-aos='zoom-out-right'>
             <h2 className="text-3xl font-bold text-center mt-20">Contact with me</h2>
             <div className='mt-20'>
                 <div>

@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       {
         path:'projects/:id',
         element:<ProjectDetails></ProjectDetails>,
-        loader:({params})=>fetch(`http://localhost:5000/projects/${params.id}`)
+        loader:({params})=>fetch(`https://rahat-portfolio-server-phi.vercel.app/projects/${params.id}`)
       }
     ]
   },

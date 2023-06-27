@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import backgroundImage from '../../assets/banner/background.jpg'
 import myNewImage from '../../assets/banner/myLastBannerImg.png'
 import {FaFacebookSquare,FaLinkedin,FaWhatsappSquare } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import {useTypewriter,Cursor} from 'react-simple-typewriter'
+import Typewriter from 'typewriter-effect';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Banner = () => {
+  useEffect(()=>{
+    AOS.init({duration:2000})
+  },[])
     return (
-        <div className="relative">
+        <div className="relative animation" data-aos="fade-up">
         <div
           className="bg-cover  h-[700px] "
           style={{ backgroundImage: `url(${backgroundImage})` }}
@@ -16,7 +23,18 @@ const Banner = () => {
             <div className="text-white text-lg w-1/2 sm:text-xl mt-20">
               <h1 className="font-semibold text-3xl">Hello, It's me </h1>
               <h2 className='text-5xl font-bold text-yellow-400'>MD. Mottakin Rahat</h2>
-              <p className="mt-2 text-3xl">And I am a <span className='font-semibold text-cyan-500'>Web developer</span></p>
+         <div className='text-2xl font-bold text-cyan-200'>
+         <Typewriter style={{font:'bold'}} options={{
+                autoStart: true,
+                loop:true,
+                delay:40,
+                strings:[
+                  'I am a React Developer'
+                ]
+              }}>
+
+              </Typewriter>
+         </div>
               <p className='mt-4 text-[15px]'>I am a highly proficient developer specializing in the MERN stack, Next.js, and JavaScript. With an extensive command over MongoDB, Express.js, React, and Node.js, I possess the ability to craft dynamic and visually stunning web applications. By harnessing the capabilities of Next.js, I create lightning-fast and engaging user interfaces. 
               </p>
               <div className="flex items-center gap-2 mt-4">
