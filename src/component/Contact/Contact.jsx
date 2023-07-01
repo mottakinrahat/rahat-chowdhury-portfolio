@@ -18,9 +18,10 @@ const Contact = () => {
 
     const sendEmail = (e) => {
         e.preventDefault();
-
+        console.log(form.current);
         emailjs.sendForm('service_dvmf4ts', 'template_8wft31i', form.current, 'HNAkv7Kikhvp8HiyR')
             .then((result) => {
+                console.log(result);
                 console.log(result.text);
             }, (error) => {
                 console.log(error.text);
@@ -48,22 +49,22 @@ const Contact = () => {
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
-                                <input type="text" placeholder="Your name" className="form-group input input-bordered-none shadow-inner w-full  bg-white" />
+                                <input type="text" placeholder="Your name" name="user_name" className="form-group input input-bordered-none shadow-inner w-full  bg-white" />
                             </div>
                             <div className="form-control">
                                 <label className="label ">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="text" placeholder="email" className="form-group  input input-bordered-none shadow-inner  bg-white" />
+                                <input type="text" placeholder="email" name="user_email" className="form-group  input input-bordered-none shadow-inner  bg-white" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Your Message</span>
                                 </label>
-                                <input type="text" placeholder="type your message" className="form-group  input input-bordered-none shadow-inner bg-white" />
+                                <input type="text" placeholder="type your message" name="message" className="form-group  input input-bordered-none shadow-inner bg-white" />
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Send</button>
+                                <input className='btn btn-primary' type="submit" value="Send" />
                             </div>
                         </form>
                     </div>
