@@ -1,0 +1,6 @@
+.form-group{
+    padding: 0px 30px;
+    margin:14px 12px;
+    border-radius: 25px;
+    box-shadow: inset 8px 8px 8px #e6f0f3, inset -8px -8px 8px #ffff ;
+}

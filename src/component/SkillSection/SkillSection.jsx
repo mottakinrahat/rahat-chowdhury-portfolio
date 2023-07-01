@@ -16,7 +16,7 @@ const SkillSection = () => {
     return (
         <div className='animation' data-aos='zoom-in-up'>
             <h2 className='text-3xl font-bold text-center mt-10'>My Skills</h2>
-            <div className='grid md:grid-cols-5 justify-between items-center gap-4 px-10 ml-20'>
+            <div className='grid md:grid-cols-5 justify-between items-center gap-4 px-10'>
                 {
                     skills.map(skill => <ShowSkill key={skill._id} skill={skill}></ShowSkill>)
                 }

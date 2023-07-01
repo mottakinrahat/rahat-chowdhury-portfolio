@@ -1,44 +1,58 @@
 import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot ,faEnvelope,faPhone} from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-    const Contact = () => {
-    useEffect(()=>{
-      AOS.init({duration:2000})
-    },[])
+import './Contact.css'
+
+const Contact = () => {
+    useEffect(() => {
+        AOS.init({ duration: 2000 })
+    }, [])
     return (
-        <div className='animation' data-aos='zoom-out-right'>
-            <h2 className="text-3xl font-bold text-center mt-20">Contact with me</h2>
-            <div className='mt-20'>
-                <div>
-                    <div className="card  mx-40 bg-neutral text-neutral-content">
-                        <div className="card-body items-center text-center">
-                            <FontAwesomeIcon className=' h-10 p-[10px] rounded-[10px]' icon={faLocationDot} />
-                            <h1 className='text-2xl  border-yellow-500  border-2 p-4 rounded-3xl '><span className='text-yellow-500 font-semibold'>Permanent Address:</span> Cumilla , Chittagong , Bangladesh<br /><p> <span className='text-yellow-500 font-semibold'>Present Address:</span> Aftabnagar, Dhaka , Bangladesh</p> </h1>
+        <div className="hero min-h-screen bg-cyan-200 mt-10 m-20 w-auto rounded-2xl text-black">
+            <div className="hero-content flex-col lg:flex-row">
+                <div className="text-center w-1/2 bg-blue-800 p-20  text-white h-full lg:text-left">
+                    <h1 className="text-3xl font-bold">Contact with me</h1>
+                    <p>Please feel free to contact with me at any time and I will try my best to react to you as soon as possible.</p>
+                    <p className="py-6">Email: rahatchowdhury661@gmail.com </p>
+                    <p className="py-6">phone: +8801886807417</p>
+                    <p className="py-6">Alternative phone: +8801617807417</p>
+                    <p className="py-6">whats app: rahatchowdhury661@gmail.com </p>
+                    <p className="py-6">Linked in: rahatchowdhury661@gmail.com </p>
+                    <p className="py-6">Linked in: rahatchowdhury661@gmail.com </p>
+                    <p className="py-6">Linked in: rahatchowdhury661@gmail.com </p>
+                </div>
+                <div className=" w-1/2  bg-cyan-200 md:ml-20">
+                    <h2 className='text-3xl font-bold text-center'>Send me a Message</h2>
+                    <div className="card-body w-full">
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Name</span>
+                            </label>
+                            <input type="text" placeholder="Your name" className="form-group input input-bordered-none shadow-inner w-full  bg-white" />
                         </div>
-
-                    </div>
-                    <div className='flex justify-between items-center gap-6 mt-6 mx-40  '>
-
-                        <div className="card w-1/2 bg-neutral text-neutral-content">
-                            <div className="card-body items-center text-center">
-                                <FontAwesomeIcon  className=' h-10 p-[10px] rounded-[10px]' icon={faEnvelope} />
-                                <h1 className='text-2xl  border-yellow-500  border-2 p-2 rounded-3xl text-white '>rahatchowdhury661@gmail.com</h1>
-                               
-                            </div>
+                        <div className="form-control">
+                            <label className="label ">
+                                <span className="label-text">Email</span>
+                            </label>
+                            <input type="text" placeholder="email" className="form-group  input input-bordered-none shadow-inner  bg-white" />
                         </div>
-                        <div className="card w-1/2 bg-neutral text-neutral-content">
-                            <div className="card-body items-center text-center">
-                            <FontAwesomeIcon  className=' h-10 p-[10px] rounded-[10px]' icon={faPhone} />
-                            <h1 className='text-2xl  border-yellow-500  border-2 p-2 rounded-3xl text-white '>+8801886807417</h1>
-                                
-                            </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Your Message</span>
+                            </label>
+                            <input type="text" placeholder="password" className="form-group  input input-bordered-none shadow-inner bg-white" />
+                            <label className="label">
+                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                            </label>
+                        </div>
+                        <div className="form-control mt-6">
+                            <button className="btn btn-primary">Send</button>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     );
