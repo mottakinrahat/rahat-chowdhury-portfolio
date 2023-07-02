@@ -14,14 +14,13 @@ import ParticleBG from '../ParticleBG/ParticleBG';
 const Home = () => {
     return (
         <div>
-
             <Banner></Banner>
             <AboutMe></AboutMe>
             <SkillSection></SkillSection>
             <Education></Education>
             <ProjectHome></ProjectHome>
             <Contact></Contact>
-          <ParticleBG></ParticleBG>
+            <ParticleBG></ParticleBG>
         </div>
     );
 };
