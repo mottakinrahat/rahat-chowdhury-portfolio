@@ -5,7 +5,7 @@ const ProjectDetails = () => {
     const singleProject=useLoaderData();
     console.log(singleProject);
     return (
-        <div className='pt-20 ml-20 relative'>
+        <div className='pt-20 md:ml-20 relative'>
             
          <img src={singleProject?.project_image} className=' md:h-[800px] opacity-30 w-full mx-auto rounded object-cover object-top hover:object-bottom duration-1000 cursor-move ' alt="" />
          <div className="absolute h-full inset-0 bg-black opacity-0"></div>
