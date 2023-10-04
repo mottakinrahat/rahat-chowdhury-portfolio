@@ -26,7 +26,7 @@ const ShowProjects = ({ project }) => {
 
         //     </div>
         // </div>
-        <div className='px-2 md:px-0'>
+        <div className='px-2 md:px-0 mx-auto'>
             <div className="card  md:w-[600px] gap-6 bg-gray-800 mb-6 md:mx-10  text-white opacity-90 shadow-xl">
                 <figure className="px-10 pt-10 ">
                     <img src={project?.project_image} alt="Shoes" className="rounded-xl w-full h-80 object-cover object-top hover:object-bottom duration-1000 cursor-move " />
