@@ -91,13 +91,13 @@ const Banner = () => {
               </div>
             </div>
             <div className="ml-20">
-              <Link to="https://drive.google.com/file/d/1cXEeGWseG0G3pqszFNZ_YIT8CoGlWtHN/view?usp=sharing">
+              <Link to="https://drive.google.com/file/d/1NqqcXHwPvguz4i7UiwkrTmBH8C0t2XHp/view?usp=sharing">
                 {" "}
                 <button className="box px-[28px] py-[12px] hover:bg-cyan-600 mr-2 bg-[#00EEFF] text-black font-bold mt-10 rounded-[50px]">
                   Download CV
                 </button>
               </Link>
-              <Link to="https://drive.google.com/file/d/1HswZd9V-YmLuyG4wu1i1wMePX07WSpiy/view?usp=sharing">
+              <Link to="https://drive.google.com/file/d/1iuec5B9wL35P_g4SdwMPcel4z_so9Jhg/view?usp=drive_link">
                 <button className="box px-[28px] py-[12px] hover:bg-cyan-600   border-[#00EEFF] border-2 text-white font-bold mt-10 rounded-[50px]">
                   Resume
                 </button>
