@@ -20,7 +20,7 @@ const AddProduct = () => {
       project_description: data.projectDescription,
       technologies: data.technology,
     };
-    fetch("http://localhost:5000/projects", {
+    fetch("https://rahat-portfolio-server-phi.vercel.app/projects", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(projectData),

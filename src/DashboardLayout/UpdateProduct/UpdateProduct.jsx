@@ -35,11 +35,14 @@ const UpdateProduct = () => {
       technologies: data.technology,
     };
     try {
-      const response = await fetch(`http://localhost:5000/projects/${_id}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(projectData),
-      });
+      const response = await fetch(
+        `https://rahat-portfolio-server-phi.vercel.app/projects/${_id}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(projectData),
+        }
+      );
       const result = await response.json();
       console.log(result);
       if (result?.result?.modifiedCount) {

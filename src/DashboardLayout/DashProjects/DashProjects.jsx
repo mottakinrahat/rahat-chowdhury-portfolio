@@ -21,7 +21,7 @@ const DashProjects = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/projects/${id}`, {
+        fetch(`https://rahat-portfolio-server-phi.vercel.app/projects/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

@@ -63,7 +63,9 @@ const router = createBrowserRouter([
         path: "updateproduct/:id",
         element: <UpdateProduct />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/projects/${params.id}`),
+          fetch(
+            `https://rahat-portfolio-server-phi.vercel.app/projects/${params.id}`
+          ),
       },
     ],
   },

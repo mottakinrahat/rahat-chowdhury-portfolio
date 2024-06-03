@@ -1,9 +1,21 @@
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProviders/AuthProviders";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [role, setRole] = useState({});
 
+  useEffect(() => {
+    fetch("https://rahat-portfolio-server-phi.vercel.app/userData")
+      .then((res) => res.json())
+      .then((data) => {
+        const userData = data.find((userData) => userData.email === user.email);
+        if (userData) {
+          setRole(userData);
+        }
+      })
+      .catch((error) => console.error("Error fetching user data:", error));
+  }, [user]);
   const handleLogout = () => {
     logOut()
       .then((result) => {})
@@ -11,6 +23,7 @@ const Navbar = () => {
         console.log(err.message);
       });
   };
+  console.log(role);
   const navItems = (
     <>
       <li>
@@ -20,11 +33,11 @@ const Navbar = () => {
       <li>
         <Link to="/projects">Projects</Link>
       </li>
-      <li>
-        <Link to="/dashboard/dashproject">
-          dashboard
-        </Link>
-      </li>
+      {user && role?.role === "admin" && (
+        <li>
+          <Link to="/dashboard/dashproject">dashboard</Link>
+        </li>
+      )}
     </>
   );
 
@@ -67,7 +80,6 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-end justify-end items-center gap-2">
-          <button className="bg-[#8F5CF8] px-8 py-2 rounded-xl">Hire Me</button>
           {user ? (
             <button
               onClick={handleLogout}

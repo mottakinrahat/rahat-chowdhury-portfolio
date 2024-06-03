@@ -10,35 +10,48 @@ const Register = () => {
   const [error, setError] = useState("");
   const { createUser, updateUserData } = useContext(AuthContext);
   const handleRegister = (e) => {
-    setSuccess("");
-    setError("");
-
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-   
+
     console.log(name, email, password);
 
     createUser(email, password)
       .then((result) => {
-        const createdUser = result.user;
-        setSuccess("User Created Successfully");
-        updateUserData(name, photo);
+        const saveUser = {
+          name: name,
+          email: email,
+          role: "user",
+        };
+        console.log(saveUser);
+        fetch("https://rahat-portfolio-server-phi.vercel.app/userData", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(saveUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId) {
+              Swal.fire({
+                position: "top-center",
+                icon: "success",
+                title: "User Created Successfully",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+            }
+          });
 
-        Swal.fire({
-          position: "top-center",
-          icon: "success",
-          title: "User Created Successfully",
-          showConfirmButton: false,
-          timer: 1500,
-        });
+        const createdUser = result.user;
+        updateUserData(name);
       })
       .catch((err) => {
-        setError(err.message);
+        console.error(err);
       });
   };
+
   useEffect(() => {
     document.title = "portfolio|Register";
   }, []);
