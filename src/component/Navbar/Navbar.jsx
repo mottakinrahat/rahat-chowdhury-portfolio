@@ -1,6 +1,16 @@
 import { Link } from "react-router-dom";
-
+import { AuthContext } from "../AuthProviders/AuthProviders";
+import { useContext } from "react";
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logOut()
+      .then((result) => {})
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
   const navItems = (
     <>
       <li>
@@ -9,6 +19,11 @@ const Navbar = () => {
 
       <li>
         <Link to="/projects">Projects</Link>
+      </li>
+      <li>
+        <Link to="/dashboard/dashproject">
+          dashboard
+        </Link>
       </li>
     </>
   );
@@ -36,7 +51,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 p-2  bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 p-2 flex justify-center items-center bg-base-100 rounded-box w-52"
             >
               {navItems}
             </ul>
@@ -50,8 +65,23 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navItems}</ul>
         </div>
-        <div className="navbar-end">
+
+        <div className="navbar-end justify-end items-center gap-2">
           <button className="bg-[#8F5CF8] px-8 py-2 rounded-xl">Hire Me</button>
+          {user ? (
+            <button
+              onClick={handleLogout}
+              className="bg-[#8F5CF8] px-8 py-2 rounded-xl"
+            >
+              Logout
+            </button>
+          ) : (
+            <Link to="/login">
+              <button className="bg-[#8F5CF8] px-8 py-2 rounded-xl">
+                Login
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </div>
